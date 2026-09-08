@@ -83,4 +83,18 @@ using Test
 
     @test isapprox(0.727896333582715, goodness_of_fit(bll, m), rtol=0.1)
 
+
+
+    PMTools.save_fit_results("fit_results.csv", bll, m)
+    vals, errs = Float64[], Float64[]
+    for line in readlines("fit_results.csv")[2:end]
+        param, val, err = split(line, ",")
+        val, err = parse(Float64, val), parse(Float64, err)
+        push!(vals, val)
+        push!(errs, err)
+    end
+
+    @test vals[1] == 0.724
+    @test errs[1] == 0.049
+    rm("fit_results.csv")
 end

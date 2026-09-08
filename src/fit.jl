@@ -67,3 +67,35 @@ function goodness_of_fit(bll::BinnedNLL, m::Minuit)
 
     return χ² / ndf
 end
+
+"""
+    save_fit_results(fname::String, bll::BinnedNLL, m::Minuit)
+
+Saves parameters names, values and errors into a csv file.
+Additionally the goodness of fit value is add as a last line with
+an error set to 0.0
+"""
+function save_fit_results(fname::String, bll::BinnedNLL, m::Minuit)
+    gof_name = "gof"
+    gof = goodness_of_fit(bll, m)
+    gof_err = 0.0
+
+
+
+    open(fname, "w") do io
+        join(io, ["parameter", "value", "err"], ",")
+        println(io)
+
+        for (name, value, err) in zip(m.parameters, m.values, m.errors)
+            err = round(err, sigdigits=2)
+            err_str = "$(err)"
+            n_digits = length.(split(err_str, "."))[end]
+            value = round(value, digits=n_digits)
+            join(io, [name, value, err], ",")
+            println(io)
+        end
+
+        join(io, [gof_name, round(gof, digits=2), gof_err], ",")
+        println(io)
+    end
+end
