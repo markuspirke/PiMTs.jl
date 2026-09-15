@@ -11,7 +11,7 @@ import NativeMinuit: BinnedNLL
 using NativeMinuit
 using StatsBase
 
-export ExGaussian, params, ChargeSpectrum, mean, var, std, pdf, cdf, insupport, quantile
+export ExGaussian, params, ChargeSpectrum, mean, var, std, pdf, cdf, insupport, quantile, peak2valley
 export BinnedNLL, goodness_of_fit
 
 include("utils.jl")

@@ -75,10 +75,15 @@ Saves parameters names, values and errors into a csv file.
 Additionally the goodness of fit value is add as a last line with
 an error set to 0.0
 """
-function save_fit_results(fname::String, bll::BinnedNLL, m::Minuit)
+function save_fit_results(fname::String, bll::BinnedNLL, m::Minuit, kmax::Int)
     gof_name = "gof"
     gof = goodness_of_fit(bll, m)
     gof_err = 0.0
+
+    cs = ChargeSpectrum(m.values..., kmax)
+    p2v_name = "p2v"
+    p2v = peak2valley(cs)
+    p2v_err = 0.0
 
 
 
@@ -96,6 +101,8 @@ function save_fit_results(fname::String, bll::BinnedNLL, m::Minuit)
         end
 
         join(io, [gof_name, round(gof, digits=2), gof_err], ",")
+        println(io)
+        join(io, [p2v_name, round(p2v, digits=2), p2v_err], ",")
         println(io)
     end
 end

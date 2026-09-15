@@ -76,8 +76,7 @@ end
 """
     mean(d::ExGaussian)
 
-Mean of `d`, `μ + 1/c`: the mean of the Gaussian component plus the mean `1/c` of the
-exponential component. The exponential part only shifts mass to the right, so the mean
+Mean of `d`, `μ + 1/c`: the mean of the Gaussian component. The exponential part only shifts mass to the right, so the mean
 always exceeds the mode and the location parameter `μ`.
 
 # Examples
@@ -198,7 +197,6 @@ struct ChargeSpectrum{T<:Real} <: ContinuousUnivariateDistribution
         @argcheck σ₀ ≥ 0
         @argcheck c₀ > 0
         @argcheck 1 ≥ w ≥ 0
-        @argcheck μ > 0
         @argcheck σ ≥ 0
         @argcheck kmax ≥ 1
         return new{T}(λ, q₀, σ₀, w, c₀, μ, σ, kmax)
@@ -374,4 +372,15 @@ function Random.rand(rng::AbstractRNG, d::ChargeSpectrum)
         return rand(rng, Normal(μk, σk))
     end
 
+end
+
+function peak2valley(cs::ChargeSpectrum)
+    xmin = cs.q₀
+    xmax = cs.μ
+    x0 = (xmin + xmax)/2
+
+    m = Minuit(x -> pdf(cs, x[1]), [x0]; limits=[(xmin, xmax)])
+    migrad!(m)
+
+    return pdf(cs, cs.μ)/pdf(cs, m.values[1])
 end

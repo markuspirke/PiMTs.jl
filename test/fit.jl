@@ -85,7 +85,7 @@ using Test
 
 
 
-    PMTools.save_fit_results("fit_results.csv", bll, m)
+    PMTools.save_fit_results("fit_results.csv", bll, m, kmax)
     vals, errs = Float64[], Float64[]
     for line in readlines("fit_results.csv")[2:end]
         param, val, err = split(line, ",")
