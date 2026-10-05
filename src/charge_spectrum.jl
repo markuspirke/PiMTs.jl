@@ -265,14 +265,7 @@ As there is no analyitcal inverse of the cdf, this is estimated
 numerically based on `Distributions.quantile_bisect`.
 """
 function Distributions.quantile(d::ChargeSpectrum, x::Real)
-    # xlow = d.kmax * d.μ - 5.0 * d.kmax * d.σ
-    # xhigh = d.kmax * d.μ + 5.0 * d.kmax * d.σ
-    # @show xlow, xhigh
-    # Distributions.quantile_bisect(d, x, xlow, xhigh)
-    #
-    # y = d.q₀ # this should be mode(d)
-    # return Distributions.quantile_newton(d, x, y)
-    qs = rand(d, 1_000_000)
+    qs = rand(d, 1_000_000) # needs improvements in future
 
     return quantile(qs, x)
 end
@@ -374,6 +367,14 @@ function Random.rand(rng::AbstractRNG, d::ChargeSpectrum)
 
 end
 
+"""
+    function peak2valley(cs::ChargeSpectrum)
+
+Calculates the peak to valley ratio for a given charge spectrum.
+This is accomplished by searching for a minimum between the pedestal peak
+and the single photoelectron peak.
+The search is based on finding the minimum with Minuit.
+"""
 function peak2valley(cs::ChargeSpectrum)
     xmin = cs.q₀
     xmax = cs.μ

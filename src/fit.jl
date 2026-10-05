@@ -72,8 +72,8 @@ end
     save_fit_results(fname::String, bll::BinnedNLL, m::Minuit)
 
 Saves parameters names, values and errors into a csv file.
-Additionally the goodness of fit value is add as a last line with
-an error set to 0.0
+Additionally the goodness of fit value and the peak to valley ratio is added.
+Here the errors in the second column are set to 0.0.
 """
 function save_fit_results(fname::String, bll::BinnedNLL, m::Minuit, kmax::Int)
     gof_name = "gof"

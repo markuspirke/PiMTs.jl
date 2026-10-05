@@ -1,4 +1,7 @@
-# PMT Charge Spectrum
+# PMT Charge Spectrumdocs
+The photomultiplier charge spectrum implemented in this package is based on this [paper](https://iopscience.iop.org/article/10.1088/1748-0221/15/02/P02001) by Milind Diwan. 
+It is assumed that the spectrum can be described as a convolution of three processes. Electronics noise, additional noise (probably mainly from dark pulses, altough I am not sure here) and the amplification process of photoelectrons released due to an outside optical signal.
+The electronics noise is modeled as a Gaussian. Additional noise, if present is assumed to be exponentially distributed (not yet understood the deeper assumption here) and the multiplication is approximated by a Gaussian.
 
 The following show how we can initialize a PMT charge spectrum for some given parameters
 ```@example usage
