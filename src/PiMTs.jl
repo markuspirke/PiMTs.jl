@@ -1,4 +1,4 @@
-module PMTools
+module PiMTs
 
 import Base: minimum, maximum
 import Distributions: pdf, cdf, insupport

@@ -1,11 +1,11 @@
-using PMTools
+using PiMTs
 using Test
 
 
 @testset "ExGaussian" begin
     μ, σ, c = 0.0, 1.0, 10.0
 
-    emg = PMTools.ExGaussian(μ, σ, c)
+    emg = PiMTs.ExGaussian(μ, σ, c)
     xs = rand(emg, 100_000)
     @test (μ, σ, c) == params(emg)
     @test 0.1 ≈ mean(emg)

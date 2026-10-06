@@ -1,22 +1,22 @@
-# PMTools
+# PiTMs
 
-<!-- [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://xe91xote.pages.ecap.work/PMTools.jl/stable) -->
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://xe91xote.pages.ecap.work/PMTools.jl/dev)
-[![Build Status](https://git.ecap.work/xe91xote/PMTools.jl/badges/main/pipeline.svg)](https://git.ecap.work/xe91xote/PMTools.jl/pipelines)
-[![Coverage](https://git.ecap.work/xe91xote/PMTools.jl/badges/main/coverage.svg)](https://git.ecap.work/xe91xote/PMTools.jl/commits/main)
+<!-- [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://xe91xote.pages.ecap.work/PiMTs.jl/stable) -->
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://xe91xote.pages.ecap.work/PiMTs.jl/dev)
+[![Build Status](https://git.ecap.work/xe91xote/PiMTs.jl/badges/main/pipeline.svg)](https://git.ecap.work/xe91xote/PiMTs.jl/pipelines)
+[![Coverage](https://git.ecap.work/xe91xote/PiMTs.jl/badges/main/coverage.svg)](https://git.ecap.work/xe91xote/PiMTs.jl/commits/main)
 
-Welcome to the `PMTools.jl` repository!
+Welcome to the `PiMTs.jl` repository!
 
 
 ## Documentation
 
-Check out the **[Latest Documention](https://xe91xote.pages.ecap.work/PMTools.jl/dev)**
+Check out the **[Latest Documention](https://xe91xote.pages.ecap.work/PiMTs.jl/dev)**
 which also includes tutorials and examples.
 
 
 ## Installation
 
-`PMTools.jl` is not an officially registered Julia package but it's available via
+`PiMTs.jl` is not an officially registered Julia package but it's available via
 the [ECAP Julia registry](https://git.ecap.work/common/julia-registry). To add
 the ECAP Julia registry to your local Julia registry list, follow the
 instructions in its
@@ -24,13 +24,13 @@ instructions in its
 
     git clone git@git.ecap.work:common/julia-registry ~/.julia/registries/ECAP.git
     
-After that, you can add `PMTools.jl` just like any other Julia package:
+After that, you can add `PiMTs.jl` just like any other Julia package:
 
-    julia> import Pkg; Pkg.add("PMTools")
+    julia> import Pkg; Pkg.add("PiMTs")
     
 
 ## Quickstart
 
 ``` julia-repl
-julia> using PMTools
+julia> using PiMTs
 ```

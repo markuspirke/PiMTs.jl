@@ -6,7 +6,7 @@ Here we use the standard tool of high energy physicists when performing fits: Mi
 First we need to loading packages and define a charge spectrum where we sample our data from.
 
 ```@example usage
-using PMTools, NativeMinuit, StatsBase
+using PiMTs, NativeMinuit, StatsBase
 
 λ, q₀, σ₀, w, c₀, μ, σ, kmax = 0.8, 1.0, 0.2, 0.3, 1.0, 6.0, 2.0, 10
 cs = ChargeSpectrum(λ, q₀, σ₀, w, c₀, μ, σ, kmax)
@@ -87,8 +87,8 @@ fig
 In the example above data was created based on samples taken from the model that was assumed in the fit.
 To prove that this also works on real data, we have a helper function which provides real data from a Hamamatsu 10 inch PMT.
 ```@example usage
-using PMTools, NativeMinuit, StatsBase, CairoMakie
-Qs, Qs_noise = PMTools.get_test_data()
+using PiMTs, NativeMinuit, StatsBase, CairoMakie
+Qs, Qs_noise = PiMTs.get_test_data()
 
 q₀_init, σ₀_init = mean(Qs_noise), std(Qs_noise)
 λ_init = 1.0

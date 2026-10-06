@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   test:
-    name: PMTools.jl - Julia ${{ matrix.version }}
+    name: PiMTs.jl - Julia ${{ matrix.version }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false

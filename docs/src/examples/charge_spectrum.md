@@ -5,7 +5,7 @@ The electronics noise is modeled as a Gaussian. Additional noise, if present is 
 
 The following show how we can initialize a PMT charge spectrum for some given parameters
 ```@example usage
-using PMTools
+using PiMTs
 
 λ, q₀, σ₀, w, c₀, μ, σ, kmax = 3.0, 1.0, 0.2, 0.3, 10.0, 5.0, 2.0, 10
 cs = ChargeSpectrum(λ, q₀, σ₀, w, c₀, μ, σ, kmax)

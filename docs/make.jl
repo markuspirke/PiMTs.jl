@@ -1,8 +1,8 @@
-using Documenter, PMTools
+using Documenter, PiMTs
 
 makedocs(;
-    modules = [PMTools],
-    sitename = "PMTools.jl",
+    modules = [PiMTs],
+    sitename = "PiMTs.jl",
     authors = "Markus Pirke",
     format = Documenter.HTML(;
         assets = ["assets/custom.css"],
@@ -20,13 +20,13 @@ makedocs(;
         "API" => "api.md"
     ],
     repo = Documenter.Remotes.URL(
-        "https://git.ecap.work/xe91xote/PMTools.jl/blob/{commit}{path}#L{line}",
-        "https://git.ecap.work/xe91xote/PMTools.jl"
+        "https://git.ecap.work/xe91xote/PiMTs.jl/blob/{commit}{path}#L{line}",
+        "https://git.ecap.work/xe91xote/PiMTs.jl"
     ),
 )
 
 deploydocs(;
-  repo = "git.ecap.work/xe91xote/PMTools.jl",
+  repo = "git.ecap.work/xe91xote/PiMTs.jl",
   devbranch = "main",
   push_preview=true
 )

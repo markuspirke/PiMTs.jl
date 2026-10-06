@@ -92,6 +92,6 @@ docs:
         Pkg.instantiate()
         Pkg.resolve()
         using Documenter: doctest
-        using PMTools
-        doctest(PMTools)
+        using PiMTs
+        doctest(PiMTs)
         include("docs/make.jl")'

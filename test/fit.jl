@@ -1,4 +1,4 @@
-using PMTools
+using PiMTs
 using NativeMinuit
 using StatsBase
 using Random
@@ -48,7 +48,7 @@ using Test
 
     # real data
 
-    Qs, Qs_noise = PMTools.get_test_data()
+    Qs, Qs_noise = PiMTs.get_test_data()
 
     q₀_init, σ₀_init = mean(Qs_noise), std(Qs_noise)
     λ_init = 1.0
@@ -85,7 +85,7 @@ using Test
 
 
 
-    PMTools.save_fit_results("fit_results.csv", bll, m, kmax)
+    PiMTs.save_fit_results("fit_results.csv", bll, m, kmax)
     vals, errs = Float64[], Float64[]
     for line in readlines("fit_results.csv")[2:end]
         param, val, err = split(line, ",")

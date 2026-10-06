@@ -3,11 +3,11 @@ CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 DocumenterInterLinks = "d12716ef-a0f6-4df4-a9f1-a5a34e75c656"
 NativeMinuit = "5523a57a-07f4-4aae-a9fd-d526bcb5d194"
-PMTools = "367b7231-30e3-4189-9d36-3844e4b4348c"
+PiMTs = "367b7231-30e3-4189-9d36-3844e4b4348c"
 StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
 
 [sources]
-PMTools = {path = ".."}
+PiMTs = {path = ".."}
 
 [compat]
 Documenter = "1"
